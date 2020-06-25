@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -9,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
 	    Student student = new Student("Kien", 30, "HT");
 	    Student student1 = new Student("Nam", 26, "HN");
-	    Student student2 = new Student("Anh", 38, "HT" );
+	    Student student2 = new Student("Anh", 18, "HT" );
 		Student student3 = new Student("Tung", 38, "HT" );
 
 	    List<Student> lists = new ArrayList<Student>();
@@ -22,8 +23,17 @@ public class Main {
 			System.out.println(st.toString());
         }
 
-	    AgeComparator ageComparator = new AgeComparator();
-	    Collections.sort(lists,ageComparator);
+	 //   AgeComparator ageComparator = new AgeComparator();
+//	    Collections.sort(lists,ageComparator);
+
+//		lists.sort(new Comparator<Student>() {
+//			@Override
+//			public int compare(Student o1, Student o2) {
+//				return o1.getAge() - o2.getAge();
+//			}
+//		});
+
+		lists.sort((o1, o2)->o1.getAge() - o2.getAge());
 		System.out.println("So sanh theo tuoi:");
 		for(Student st : lists){
 			System.out.println(st.toString());
