@@ -1,2 +1,1 @@
-Vinh,20,VN
-Nam,30,LAO
+This is my Data which needs to be written into the file
